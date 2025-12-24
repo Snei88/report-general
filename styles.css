@@ -1,0 +1,61 @@
+/* Global responsive adjustments */
+:root{
+  --app-max-width:1200px;
+}
+
+/* Base responsive font scaling */
+html{
+  font-size:15px; /* default */
+}
+@media (max-width:1024px){
+  html{ font-size:14px; }
+}
+@media (max-width:640px){
+  html{ font-size:13px; }
+}
+
+body{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* Constrain very wide content and center */
+.max-w-\[1600px\]{
+  max-width:var(--app-max-width) !important;
+}
+
+/* Reduce header height on small screens */
+@media (max-width:640px){
+  header.h-20{ height:4rem !important; }
+  .h-20{ height:4rem !important; }
+  .p-6{ padding:0.75rem !important; }
+  .px-8{ padding-left:0.75rem !important; padding-right:0.75rem !important; }
+  .w-11{ width:2.25rem !important; }
+  .h-11{ height:2.25rem !important; }
+  .w-72{ width:16rem !important; }
+}
+
+/* Make main content use full width on small screens */
+@media (max-width:900px){
+  .max-w-\[1600px\]{ max-width:100% !important; padding-left:0.5rem !important; padding-right:0.5rem !important; }
+}
+
+/* Slightly tighter spacing for compact viewports */
+@media (max-width:480px){
+  .gap-5{ gap:0.5rem !important; }
+  .gap-4{ gap:0.4rem !important; }
+  .gap-3{ gap:0.35rem !important; }
+}
+
+/* Sidebar responsive hint: when using `sidebar-open` class, show it */
+.sidebar-responsive{ transition: transform .25s ease; }
+@media (max-width:1024px){
+  .lg\\:ml-64{ margin-left:0 !important; }
+}
+
+/* Improve tap targets but keep compact on mobile */
+button{ touch-action:manipulation; }
+
+/* Utility: make images and svg scale within containers */
+img, svg{ max-width:100%; height:auto; }
