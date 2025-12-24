@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#020617" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>Consola Gerencial - Distrito Santiago de Cali</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+      :root {
+        --brand-primary: #020617;
+        --brand-purple: #4c1d95;
+        --brand-teal: #0d9488;
+        --brand-accent: #6366f1;
+        --brand-surface: #f8fafc;
+        --glass-bg: rgba(255, 255, 255, 0.7);
+        --glass-border: rgba(226, 232, 240, 0.4);
+      }
+
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: var(--brand-surface);
+        letter-spacing: -0.015em;
+        -webkit-font-smoothing: antialiased;
+        color: #1e293b;
+      }
+
+      /* Glassmorphism Ejecutivo */
+      .glass-card {
+        background: var(--glass-bg);
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        border: 1px solid var(--glass-border);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04);
+      }
+
+      .dark-executive {
+        background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      /* Sombras de Alta Gerencia */
+      .executive-shadow {
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.03), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+      }
+
+      /* Animaciones de Transición de Vista */
+      .view-enter {
+        animation: viewEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      @keyframes viewEnter {
+        from { opacity: 0; transform: translateY(10px) scale(0.99); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+      }
+
+      /* Scrollbars Estilizados */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 20px;
+        border: 2px solid var(--brand-surface);
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+
+      /* Estados de Botones Premium */
+      .btn-premium {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-premium:active {
+        transform: scale(0.96);
+      }
+
+      /* Utilidades de Texto */
+      .tracking-executive {
+        letter-spacing: 0.15em;
+      }
+
+      .text-gradient-teal {
+        background: linear-gradient(to right, #2dd4bf, #f8fafc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      @media print {
+        .no-print { display: none !important; }
+        body { background: white !important; }
+        .glass-card { box-shadow: none !important; border: 1px solid #e2e8f0 !important; }
+      }
+
+      /* Sidebar Custom Scroll */
+      .custom-sidebar-scroll::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .custom-sidebar-scroll::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+    </style>
+
+  <link rel="stylesheet" href="/index.css">
+    <script type="importmap">
+    {
+      "imports": {
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+        "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0",
+        "recharts": "https://aistudiocdn.com/recharts@^3.5.1",
+        "react/": "https://aistudiocdn.com/react@^19.2.1/",
+        "react": "https://aistudiocdn.com/react@^19.2.1",
+        "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+        "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+        "xlsx": "https://aistudiocdn.com/xlsx@0.18.5/xlsx.mjs"
+      }
+    }
+    </script>
+  <script type="module" crossorigin src="/report-general/assets/index-AKlcqF75.js"></script>
+  <link rel="stylesheet" crossorigin href="/report-general/assets/index-D_un_gjF.css">
+</head>
+  <body class="selection:bg-indigo-100 selection:text-indigo-900">
+    <div id="root"></div>
+  </body>
+</html>
